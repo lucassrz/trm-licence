@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('referenciel_matiere', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_referenciel');
-            $table->integer('id_matiere');
+            $table->unsignedBigInteger('id_referenciel');
+            $table->unsignedBigInteger('id_matiere');
             $table->integer('heure');
             $table->timestamps();
         });

@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('enseignant', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_etablissement');
-            $table->integer('id_discipline');
+            $table->unsignedBigInteger('id_etablissement');
+            $table->unsignedBigInteger('id_discipline');
             $table->string('nom');
             $table->string('prenom');
-            $table->integer('id_status');
+            $table->unsignedBigInteger('id_status');
             $table->timestamps();
         });
     }

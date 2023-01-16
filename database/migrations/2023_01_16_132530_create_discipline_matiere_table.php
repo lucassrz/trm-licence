@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('discipline_matiere', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_code_discipline');
-            $table->integer('id_matiere');
+            $table->unsignedBigInteger('id_discipline');
+            $table->unsignedBigInteger('id_matiere');
             $table->timestamps();
         });
     }

@@ -19,7 +19,7 @@ return new class extends Migration
         });
 
         Schema::table('discipline_matiere', function (Blueprint $table) {
-            $table->foreign('id_code_discipline')->references('id')->on('code_discipline');
+            $table->foreign('id_discipline')->references('id')->on('discipline');
             $table->foreign('id_matiere')->references('id')->on('matiere');
         });
 

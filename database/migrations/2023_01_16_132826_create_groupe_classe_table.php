@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('groupe_classe', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_classe');
+            $table->unsignedBigInteger('id_classe');
             $table->string('libelle');
             $table->integer('effectif');
             $table->timestamps();
