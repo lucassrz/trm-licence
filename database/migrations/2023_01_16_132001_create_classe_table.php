@@ -21,8 +21,6 @@ return new class extends Migration
             $table->string('niveau');
             $table->integer('effectif');
             $table->timestamps();
-            $table->foreign('id_etablissement')->references('id')->on('etablissement');
-            $table->foreign('id_referenciel')->references('id')->on('referenciel');
         });
     }
 

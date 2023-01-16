@@ -19,8 +19,6 @@ return new class extends Migration
             $table->integer('id_matiere');
             $table->integer('heure');
             $table->timestamps();
-            $table->foreign('id_referenciel')->references('id')->on('referenciel');
-            $table->foreign('id_matiere')->references('id')->on('matiere');
         });
     }
 

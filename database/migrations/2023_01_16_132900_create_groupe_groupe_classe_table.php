@@ -18,8 +18,6 @@ return new class extends Migration
             $table->integer('id_groupe');
             $table->integer('id_groupe_classe');
             $table->timestamps();
-            $table->foreign('id_groupe')->references('id')->on('groupe');
-            $table->foreign('id_groupe_classe')->references('id')->on('groupe_classe');
         });
     }
 
