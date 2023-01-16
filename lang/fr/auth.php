@@ -15,6 +15,6 @@ return [
 
     'failed' => 'Les identifiants ne sont pas correct.',
     'password' => 'Mauvais mot de passe',
-    'throttle' => 'Trop de tentatives échoués. Veuillez réessayer dans :seconds secondes.',
+    'throttle' => 'Trop de tentatives échouées. Veuillez réessayer dans :seconds secondes.',
 
 ];
