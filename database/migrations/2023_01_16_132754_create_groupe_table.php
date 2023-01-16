@@ -18,6 +18,8 @@ return new class extends Migration
             $table->integer('id_matiere');
             $table->integer('id_enseignant');
             $table->timestamps();
+            $table->foreign('id_matiere')->references('id')->on('matiere');
+            $table->foreign('id_enseignant')->references('id')->on('enseignant');
         });
     }
 

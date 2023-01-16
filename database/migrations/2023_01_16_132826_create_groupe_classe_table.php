@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('libelle');
             $table->integer('effectif');
             $table->timestamps();
+            $table->foreign('id_classe')->references('id')->on('classe');
         });
     }
 

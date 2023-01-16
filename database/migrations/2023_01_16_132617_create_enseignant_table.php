@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('prenom');
             $table->integer('id_status');
             $table->timestamps();
+            $table->foreign('id_etablissement')->references('id')->on('etablissement');
+            $table->foreign('id_discipline')->references('id')->on('discipline');
+            $table->foreign('id_status')->references('id')->on('status');
         });
     }
 
