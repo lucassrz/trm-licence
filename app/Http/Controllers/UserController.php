@@ -13,26 +13,10 @@ class UserController extends Controller {
 
          $criteria = $request->input('s');
 
-         $users = DB::table('users')
+         $users = User::sortable()
                         ->where('name', 'LIKE', '%' . $criteria . '%')
                         ->orWhere('email', 'LIKE', '%' . $criteria . '%')
                         ->get();
-
-        /* $query = User::query()->where('name', 'LIKE', '%' . $criteria . '%')
-                              ->where('email', 'LIKE', '%' . $criteria . '%')
-                              ->sortable()->paginate(10); */
-                              
-         /* $users = User::sortable( 
-
-            function ($query) use ($request) {
-
-                    $query->where('name', 'LIKE', '%' . $s . '%')
-                          ->orWhere('email', 'LIKE', '%' . $s . '%')
-                          ->get();
-            }
-
-        )->paginate(10); */
-
         
         return view('users', ['users'=>$users->paginate(10)]);
     }
