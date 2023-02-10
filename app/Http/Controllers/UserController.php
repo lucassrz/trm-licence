@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller {
 
@@ -17,8 +16,12 @@ class UserController extends Controller {
                         ->where('name', 'LIKE', '%' . $criteria . '%')
                         ->orWhere('email', 'LIKE', '%' . $criteria . '%')
                         ->get();
-        
-        return view('users', ['users'=>$users->paginate(10)]);
+
+        $query = [
+            's' => $criteria
+        ];
+
+        return view('users', ['users'=>$users->paginate(10, null, null, 'page', $query)]);
     }
 
 } 
