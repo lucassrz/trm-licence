@@ -38,6 +38,9 @@
                             <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                 @sortablelink('effectif', "Effectif")
                             </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                Actions
+                            </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -45,8 +48,16 @@
                             <tr class="bg-gray-100 border-b">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{$classe->id}}</td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{$classe->libelle}}</td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{$classe->etablissement->libelle}}</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{$classe->niveau}}</td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{$classe->effectif}}</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap flex">
+                                    <a href="{{ route('classe_update', $classe->id) }}" class="pr-3">
+                                        <x-icon-update />
+                                    </a>
+                                    <a href="#">
+                                        <x-icon-delete />
+                                    </a>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>

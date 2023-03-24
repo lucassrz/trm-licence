@@ -20,7 +20,15 @@ class ClasseController extends Controller {
             's' => $criteria
         ];
 
-        return view('classe_index', ['classes'=>$classes->paginate(10, null, null, 'page', $query)]);
+        return view('classe.classe_index', ['classes'=>$classes->paginate(10, null, null, 'page', $query)]);
     }
 
+
+    public function update_form(Int $id): View {
+        $classe = Classe::where('id', $id)
+        ->with("etablissement")
+        ->firstOrFail();
+
+        return view('classe.classe_update', ['classe'=>$classe]);
+    }
 }
