@@ -19,4 +19,8 @@ class Etablissement extends Model
     protected $fillable = [
         'libelle'
     ];
+
+    public function classe(){
+        return $this->belongsTo(Classe::class, 'id');
+    }
 }

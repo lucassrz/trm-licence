@@ -14,7 +14,7 @@ class ClasseController extends Controller {
         $classes = Classe::sortable()
             ->where('libelle', 'LIKE', '%' . $criteria . '%')
             ->orWhere('id_referenciel', 'LIKE', '%' . $criteria . '%')
-            ->with(['etablissement'])->get();
+            ->with("etablissement")->get();
 
         $query = [
             's' => $criteria

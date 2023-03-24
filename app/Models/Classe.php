@@ -39,6 +39,6 @@ class Classe extends Model
     ];
 
     public function etablissement() {
-        return $this->belongsTo(Etablissement::class, 'id');
+        return $this->hasOne(Etablissement::class, 'id', "id_etablissement");
     }
 }
