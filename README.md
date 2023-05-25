@@ -23,7 +23,10 @@ npm ci
 ```
 
 Copier le .env.example et renommez le en .env
-Modifier les valeurs pour que le site puisse ce connecter
+```
+.env.example -> .env
+```
+Modifier les valeurs pour que le site puisse ce connecter à votre base de données
 
 Ensuite éxécuter les migrations pour récupérer la structure de la base de données:
 ```bash
