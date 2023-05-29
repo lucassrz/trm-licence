@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 class Discipline extends Model
 {
-    use HasFactory;
+    use HasFactory, Sortable;
 
     protected $table = 'discipline';
 
@@ -17,6 +18,13 @@ class Discipline extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'code',
+        'libelle'
+    ];
+
+    // Attributes that are sortable
+    public $sortable = [
+        'id',
         'code',
         'libelle'
     ];

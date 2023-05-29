@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EnseignantController;
+use App\Http\Controllers\DisciplineController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,8 +22,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index')->middleware(['auth', 'verified']);
 Route::get('/users', [UserController::class, 'users'])->name('users')->middleware(['auth', 'verified']);
+
+/**
+ * Enseignants
+ */
+Route::get('/enseignants', [EnseignantController::class, 'getEnseignants'])->name('enseignants')->middleware(['auth', 'verified']);
+Route::get('/enseignants/form', [EnseignantController::class, 'getFormEnseignant'])->name('enseignants/form')->middleware(['auth', 'verified']);
+Route::post('/enseignants/create', [EnseignantController::class, 'createEnseignant'])->name('enseignants/create')->middleware(['auth', 'verified']);
+
+/**
+ * Disciplines
+ */
+Route::get('/disciplines', [DisciplineController::class, 'getDisciplines'])->name('disciplines')->middleware(['auth', 'verified']);
+Route::get('/disciplines/form', [DisciplineController::class, 'getFormDiscipline'])->name('disciplines/form')->middleware(['auth', 'verified']);
+Route::post('/disciplines/create', [DisciplineController::class, 'createDiscipline'])->name('disciplines/create')->middleware(['auth', 'verified']);
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

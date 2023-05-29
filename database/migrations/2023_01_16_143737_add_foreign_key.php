@@ -14,7 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::table('classe', function (Blueprint $table) {
-            $table->foreign('id_etablissement')->references('id')->on('etablissement');
             $table->foreign('id_referenciel')->references('id')->on('referenciel');
         });
 
@@ -24,7 +23,6 @@ return new class extends Migration
         });
 
         Schema::table('enseignant', function (Blueprint $table) {
-            $table->foreign('id_etablissement')->references('id')->on('etablissement');
             $table->foreign('id_discipline')->references('id')->on('discipline');
             $table->foreign('id_status')->references('id')->on('status');
         });
