@@ -42,3 +42,9 @@ Lancer le serveur web:
 ```bash
 php artisan serve
 ```
+
+Rendez-vous sur l'URL suivante : './register' pour créer votre compte utilisateur.
+
+Pour créer un enseignant, il faut d'abord créer les statuts puis les disciplines.
+
+Pour créer un groupe, il faut d'abord créer les matières et les enseignants.
