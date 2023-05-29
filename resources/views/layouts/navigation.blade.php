@@ -32,6 +32,9 @@
                     <x-nav-link :href="route('matieres')" :active="request()->routeIs('matieres')">
                         {{ __('other.matieres')}}
                     </x-nav-link>
+                    <x-nav-link :href="route('groupes')" :active="request()->routeIs('groupes')">
+                        {{ __('other.groupes')}}
+                    </x-nav-link>
                 </div>
             </div>
 
