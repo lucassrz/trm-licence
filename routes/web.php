@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MatiereController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EnseignantController;
@@ -40,6 +41,12 @@ Route::get('/disciplines', [DisciplineController::class, 'getDisciplines'])->nam
 Route::get('/disciplines/form', [DisciplineController::class, 'getFormDiscipline'])->name('disciplines/form')->middleware(['auth', 'verified']);
 Route::post('/disciplines/create', [DisciplineController::class, 'createDiscipline'])->name('disciplines/create')->middleware(['auth', 'verified']);
 
+/**
+ * Matières
+ */
+Route::get('/matieres', [MatiereController::class, 'getMatieres'])->name('matieres')->middleware(['auth', 'verified']);
+Route::get('/matieres/form', [MatiereController::class, 'getFormMatiere'])->name('matieres/form')->middleware(['auth', 'verified']);
+Route::post('/matieres/create', [MatiereController::class, 'createMatiere'])->name('matieres/create')->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
