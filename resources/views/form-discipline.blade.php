@@ -13,6 +13,15 @@
                     <input type="text" name="code" class="form-control flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mx-auto mb-3" placeholder="Code discipline">
                     <input type="text" name="libelle" class="form-control flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mx-auto mb-3" placeholder="Libelle">
 
+                    @if(!empty($matieres))
+                        <select name="matiere" id="select-matieres" class="form-control min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mb-3">
+                            <option value="">Lier une matiere à la discipline</option>
+                            @foreach ($matieres as $matiere)
+                                <option value="<?= $matiere->id ?>"><?= $matiere->libelle ?></option>
+                            @endforeach
+                        </select>
+                    @endif
+
                     <button type="submit" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mt-4 w-48" id="basic-addon2">{{ __('other.add') }}</button>
                 </div>
             </div>
