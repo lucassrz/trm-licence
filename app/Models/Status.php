@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 class Status extends Model
 {
-    use HasFactory;
+    use HasFactory, Sortable;
 
     protected $table = 'status';
 
@@ -17,6 +18,13 @@ class Status extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'libelle',
+        'value'
+    ];
+
+    // Attributes that are sortable
+    public $sortable = [
+        'id',
         'libelle',
         'value'
     ];

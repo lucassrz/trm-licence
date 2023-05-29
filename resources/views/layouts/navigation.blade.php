@@ -24,6 +24,11 @@
                     <x-nav-link :href="route('disciplines')" :active="request()->routeIs('disciplines')">
                         {{ __('other.disciplines')}}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('status')" :active="request()->routeIs('status')">
+                        {{ __('other.status')}}
+                    </x-nav-link>
+
                     <x-nav-link :href="route('matieres')" :active="request()->routeIs('matieres')">
                         {{ __('other.matieres')}}
                     </x-nav-link>
