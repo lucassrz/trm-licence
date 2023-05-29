@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MatiereController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EnseignantController;
@@ -48,6 +49,12 @@ Route::get('/status', [StatusController::class, 'getStatus'])->name('status')->m
 Route::get('/status/form', [StatusController::class, 'getFormStatus'])->name('status/form')->middleware(['auth', 'verified']);
 Route::post('/status/create', [StatusController::class, 'createStatus'])->name('status/create')->middleware(['auth', 'verified']);
 
+/**
+ * Matières
+ */
+Route::get('/matieres', [MatiereController::class, 'getMatieres'])->name('matieres')->middleware(['auth', 'verified']);
+Route::get('/matieres/form', [MatiereController::class, 'getFormMatiere'])->name('matieres/form')->middleware(['auth', 'verified']);
+Route::post('/matieres/create', [MatiereController::class, 'createMatiere'])->name('matieres/create')->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

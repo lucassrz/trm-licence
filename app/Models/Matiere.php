@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 class Matiere extends Model
 {
-    use HasFactory;
+    use HasFactory, Sortable;
 
     protected $table = 'matiere';
 
@@ -18,5 +19,10 @@ class Matiere extends Model
      */
     protected $fillable = [
         'libelle'
+    ];
+
+    public $sortable = [
+        'id',
+        'libelle',
     ];
 }
