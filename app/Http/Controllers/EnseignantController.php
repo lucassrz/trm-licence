@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Discipline;
 use App\Models\Enseignant;
+use App\Models\Status;
 use Illuminate\Http\Request;
 
 class EnseignantController extends Controller
@@ -11,7 +13,13 @@ class EnseignantController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function getFormEnseignant() {
-        return view('form-enseignant');
+        $disciplines = Discipline::all();
+        $status = Status::all();
+
+        return view('form-enseignant', [
+            'disciplines' => $disciplines,
+            'status' => $status
+        ]);
     }
 
     /**

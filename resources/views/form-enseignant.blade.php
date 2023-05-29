@@ -13,21 +13,19 @@
                     <input type="text" name="name" class="form-control flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mx-auto mb-3" placeholder="Nom">
                     <input type="text" name="firstname" class="form-control flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mx-auto mb-3" placeholder="Prénom">
 
+
                     <select name="discipline" id="select-disciplines" class="form-control min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mb-3">
                         <option value="">Choisir une discipline</option>
-                        <option value="1">discpl1</option>
-                        <option value="2">discpl2</option>
-                        <option value="3">discpl3</option>
-                        <option value="4">discpl4</option>
-                        <option value="5">discpl5</option>
-                        <option value="6">discpl6</option>
+                        @foreach ($disciplines as $discipline)
+                            <option value="<?= $discipline->id ?>"><?= $discipline->libelle ?></option>
+                        @endforeach
                     </select>
 
                     <select name="status" id="select-status" class="form-control min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mb-3">
                         <option value="">Choisir un statut</option>
-                        <option value="1">statut1</option>
-                        <option value="2">statut2</option>
-                        <option value="3">statut3</option>
+                        @foreach ($status as $statu)
+                            <option value="<?= $statu->id ?>"><?= $statu->libelle ?> | valeur(<?= $statu->value ?>)</option>
+                        @endforeach
                     </select>
 
 

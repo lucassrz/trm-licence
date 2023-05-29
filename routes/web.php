@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EnseignantController;
 use App\Http\Controllers\DisciplineController;
+use App\Http\Controllers\StatusController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +40,13 @@ Route::post('/enseignants/create', [EnseignantController::class, 'createEnseigna
 Route::get('/disciplines', [DisciplineController::class, 'getDisciplines'])->name('disciplines')->middleware(['auth', 'verified']);
 Route::get('/disciplines/form', [DisciplineController::class, 'getFormDiscipline'])->name('disciplines/form')->middleware(['auth', 'verified']);
 Route::post('/disciplines/create', [DisciplineController::class, 'createDiscipline'])->name('disciplines/create')->middleware(['auth', 'verified']);
+
+/**
+ * Status
+ */
+Route::get('/status', [StatusController::class, 'getStatus'])->name('status')->middleware(['auth', 'verified']);
+Route::get('/status/form', [StatusController::class, 'getFormStatus'])->name('status/form')->middleware(['auth', 'verified']);
+Route::post('/status/create', [StatusController::class, 'createStatus'])->name('status/create')->middleware(['auth', 'verified']);
 
 
 Route::middleware('auth')->group(function () {
