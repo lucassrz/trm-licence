@@ -13,6 +13,9 @@ return [
     'add_matiere' => "Ajouter une matière",
     'groupes' => "Liste des groupes",
     'add_groupe' => "Ajouter des groupes",
+    'referenciels' => "Liste des référenciels",
+    'add_referenciel' => "Ajouter un référenciel",
+
 
 
     /**

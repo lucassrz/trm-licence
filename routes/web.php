@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EnseignantController;
 use App\Http\Controllers\DisciplineController;
+use App\Http\Controllers\ReferencielController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -58,11 +59,19 @@ Route::get('/matieres/form', [MatiereController::class, 'getFormMatiere'])->name
 Route::post('/matieres/create', [MatiereController::class, 'createMatiere'])->name('matieres/create')->middleware(['auth', 'verified']);
 
 /**
+
  * Groupes
  */
 Route::get('/groupes', [GroupeController::class, 'getGroupes'])->name('groupes')->middleware(['auth', 'verified']);
 Route::get('/groupes/form', [GroupeController::class, 'getFormGroupe'])->name('groupes/form')->middleware(['auth', 'verified']);
 Route::post('/groupes/create', [GroupeController::class, 'createGroupe'])->name('groupes/create')->middleware(['auth', 'verified']);
+
+/**
+ * Référenciel
+ */
+Route::get('/referenciels', [ReferencielController::class, 'getReferenciels'])->name('referenciels')->middleware(['auth', 'verified']);
+Route::get('/referenciels/form', [ReferencielController::class, 'getFormReferenciel'])->name('referenciels/form')->middleware(['auth', 'verified']);
+Route::post('/referenciels/create', [ReferencielController::class, 'createReferenciel'])->name('referenciels/create')->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
