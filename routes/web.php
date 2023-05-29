@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MatiereController;
+use App\Http\Controllers\GroupeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EnseignantController;
@@ -56,6 +57,14 @@ Route::post('/status/create', [StatusController::class, 'createStatus'])->name('
 Route::get('/matieres', [MatiereController::class, 'getMatieres'])->name('matieres')->middleware(['auth', 'verified']);
 Route::get('/matieres/form', [MatiereController::class, 'getFormMatiere'])->name('matieres/form')->middleware(['auth', 'verified']);
 Route::post('/matieres/create', [MatiereController::class, 'createMatiere'])->name('matieres/create')->middleware(['auth', 'verified']);
+
+/**
+
+ * Groupes
+ */
+Route::get('/groupes', [GroupeController::class, 'getGroupes'])->name('groupes')->middleware(['auth', 'verified']);
+Route::get('/groupes/form', [GroupeController::class, 'getFormGroupe'])->name('groupes/form')->middleware(['auth', 'verified']);
+Route::post('/groupes/create', [GroupeController::class, 'createGroupe'])->name('groupes/create')->middleware(['auth', 'verified']);
 
 /**
  * Référenciel
