@@ -33,10 +33,10 @@
                                 @sortablelink('id', "#")
                             </th>
                             <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                @sortablelink('id_matiere', "Identifiant de la matière")
+                                @sortablelink('id_matiere', "Matiere")
                             </th>
                             <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                @sortablelink('id_enseignant', "Identifiant de l'enseignant")
+                                @sortablelink('id_enseignant', "Enseignant")
                             </th>
                             <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                 @sortablelink('created_at', "Date de création")
@@ -52,7 +52,7 @@
                                 
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{$groupe->id}}</td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{$groupe->getMatiere($groupe->id_matiere)}}</td>
-                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{$groupe->getEnseigant($groupe->id_enseignant)}}</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{$groupe->getEnseignant($groupe->id_enseignant)}}</td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{$groupe->created_at}}</td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{$groupe->updated_at}}</td>
                             </tr>

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Enseignant;
 use App\Models\Groupe;
+use App\Models\Matiere;
 use Illuminate\Http\Request;
 
 class GroupeController extends Controller
@@ -11,7 +13,13 @@ class GroupeController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function getFormGroupe(){
-        return view('form-groupe');
+        $matiere = Matiere::all();
+        $enseignants = Enseignant::all();
+
+        return view('form-groupe', [
+            'matieres' => $matiere,
+            'enseignants' => $enseignants
+        ]);
     }
 
     /**

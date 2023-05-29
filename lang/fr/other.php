@@ -12,7 +12,7 @@ return [
     'matieres' => "Liste des matières",
     'add_matiere' => "Ajouter une matière",
     'groupes' => "Liste des groupes",
-    'add_groupe' => "Ajouter des groupes",
+    'add_groupe' => "Ajouter un groupe",
     'referenciels' => "Liste des référenciels",
     'add_referenciel' => "Ajouter un référenciel",
 

@@ -39,7 +39,7 @@ class Groupe extends Model
 
     public function getEnseignant($id) {
 
-        $enseignant = Matiere::find($id);
+        $enseignant = Enseignant::find($id);
         $nom = $enseignant->nom;
         return $nom;
 
