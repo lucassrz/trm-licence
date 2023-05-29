@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('enseignant', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_etablissement');
             $table->unsignedBigInteger('id_discipline');
             $table->string('nom');
             $table->string('prenom');

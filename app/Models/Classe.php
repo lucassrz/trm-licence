@@ -17,7 +17,6 @@ class Classe extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'id_etablissement',
         'id_referenciel',
         'libelle',
         'niveau',
