@@ -11,6 +11,8 @@ return [
     'add_status' => "Ajouter un statut",
     'matieres' => "Liste des matières",
     'add_matiere' => "Ajouter une matière",
+    'referenciels' => "Liste des référenciels",
+    'add_referenciel' => "Ajouter un référenciel",
 
 
     /**
