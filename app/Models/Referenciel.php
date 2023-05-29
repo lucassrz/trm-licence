@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 class Referenciel extends Model
 {
-    use HasFactory;
+    use HasFactory, Sortable;
 
     protected $table = 'referenciel';
 
@@ -18,7 +19,14 @@ class Referenciel extends Model
      */
     protected $fillable = [
         'libelle',
-        'annee',
+        'annees',
+        'niveau'
+    ];
+
+    public $sortable = [
+        'id',
+        'libelle',
+        'annees',
         'niveau'
     ];
 }
